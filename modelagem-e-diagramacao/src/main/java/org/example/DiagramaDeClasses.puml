@@ -1,0 +1,65 @@
+@startuml
+class org.example.OperarIPhone {
++ {static} void main(String[])
+}
+
+class org.example.IPhone {
+~ void ligar()
+~ void reiniciar()
+~ void exibirInfo()
+~ void desligar()
++ void buscar(String)
++ void novaAba()
++ void fechar()
++ void fecharAba()
++ void home()
++ void favoritos()
++ void voltar()
++ void atender()
++ void encerrarLigacao()
++ void discar(String)
++ void recados()
++ void play()
++ void pause()
++ void next()
++ void back()
+}
+
+interface org.example.NavegadorInternet {
+~ void buscar(String)
+~ void novaAba()
+~ void fechar()
+~ void fecharAba()
+~ void home()
+~ void favoritos()
+~ void voltar()
+}
+
+interface org.example.AparelhoTelefonico {
+~ void atender()
+~ void encerrarLigacao()
+~ void discar(String)
+~ void recados()
+}
+
+abstract class org.example.Smartphone {
+~ {abstract}void ligar()
+~ {abstract}void reiniciar()
+~ {abstract}void exibirInfo()
+~ {abstract}void desligar()
+}
+
+interface org.example.ReprodutorMusical {
+~ void play()
+~ void pause()
+~ void next()
+~ void back()
+}
+
+
+
+org.example.Smartphone <|-- org.example.IPhone
+org.example.NavegadorInternet <|.. org.example.Smartphone
+org.example.AparelhoTelefonico <|.. org.example.Smartphone
+org.example.ReprodutorMusical <|.. org.example.Smartphone
+@enduml
